@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 
 from streamlit_gsheets import GSheetsConnection
-from model import text_preprocessing, make_prediction
+from preprocess import text_preprocessing
+from inference import predict
 from utils import load_artifact
 
 st.set_page_config(layout="wide")
@@ -13,7 +14,7 @@ tfidf_vectorizer = load_artifact("tfidf-vectorizer.sav")
 model = load_artifact("logistic_regression.sav")
 
 # Page
-st.image("movie-header.jpg")
+st.image("images/movie-header.jpg")
 st.markdown("# Movie sentiment analysis app 🎬")
 st.markdown("""This app provides a **sentiment analysis model** trained on movie reviews. <br>
             Users can **write their own review** or select one from an **external database**.""", 
@@ -36,7 +37,7 @@ if option == "Write a review":
     if run_model:
         st.markdown(" ")
         review_clean = text_preprocessing(review)
-        result, probas = make_prediction(review_clean, tfidf_vectorizer, model)
+        result, probas = predict(review_clean, tfidf_vectorizer, model)
 
         if result[0] == "positive":
             st.success(f"**Result** 👍: The review is {result[0]}.")
@@ -65,7 +66,7 @@ elif option == "Find a movie review":
         st.markdown(" ")
         
         review_clean = text_preprocessing(review)
-        result, probas = make_prediction(review_clean, tfidf_vectorizer, model)
+        result, probas = predict(review_clean, tfidf_vectorizer, model)
         
         if result[0] == "positive":
             st.success(f"**Result** 👍: The review is {result[0]}.")

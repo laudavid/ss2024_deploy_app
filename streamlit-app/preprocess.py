@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 
+# TEXT CLEANING 
 def clean_text(text):
     text = text.replace('<br /><br />','')
     text = text.lower() 
@@ -33,14 +34,6 @@ def text_preprocessing(text):
     text = apply_lemmatizer(text)
     return text
 
-def make_prediction(text, vectorizer, model):
-    if isinstance(text, str):
-        text = [text]
-    
-    embedding = vectorizer.transform(text)
-    prediction = model.predict(embedding)
-    probas = model.predict_proba(embedding)
-    
-    return prediction, probas
+
     
 
