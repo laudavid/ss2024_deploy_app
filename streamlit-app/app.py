@@ -29,15 +29,14 @@ st.divider()
 if option == "Write a review":
     st.markdown("### Write a review 📝")
     review = st.text_area('Write the review here', 
-                          'I hated the movie. The story and the actors were terrible.') 
+    'I hated the movie. The story and the actors were terrible.') 
 
     st.markdown("  ")
     run_model = st.button("Run model", type="primary", key="write_review")
 
     if run_model:
         st.markdown(" ")
-        review_clean = text_preprocessing(review)
-        result, probas = predict(review_clean, tfidf_vectorizer, model)
+        result, probas = predict(review, tfidf_vectorizer, model)
 
         if result[0] == "positive":
             st.success(f"**Result** 👍: The review is {result[0]}.")
