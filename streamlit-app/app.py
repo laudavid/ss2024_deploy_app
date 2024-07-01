@@ -14,7 +14,7 @@ tfidf_vectorizer = load_artifact("tfidf-vectorizer.sav")
 model = load_artifact("logistic_regression.sav")
 
 # Page
-st.image("images/movie-header.jpg")
+st.image("streamlit-app/images/movie-header.jpg")
 st.markdown("# Movie sentiment analysis app 🎬")
 st.markdown("""This app provides a **sentiment analysis model** trained on movie reviews. <br>
             Users can **write their own review** or select one from an **external database**.""", 
