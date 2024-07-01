@@ -64,8 +64,7 @@ elif option == "Find a movie review":
     if run_model:
         st.markdown(" ")
         
-        review_clean = text_preprocessing(review)
-        result, probas = predict(review_clean, tfidf_vectorizer, model)
+        result, probas = predict(review, tfidf_vectorizer, model)
         
         if result[0] == "positive":
             st.success(f"**Result** 👍: The review is {result[0]}.")

@@ -1,7 +1,12 @@
 import re 
 import string
+import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 
 # TEXT CLEANING 
@@ -32,7 +37,7 @@ def text_preprocessing(text):
     text = clean_text(text)
     text = remove_stopwords(text)
     text = apply_lemmatizer(text)
-    return text
+    return [text]
 
 
     
