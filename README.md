@@ -1,8 +1,8 @@
-# ss2024_deploy_app
+# Exploring Machine Learning Deployment from beginner to advance level 🚀
 
-![Alt text](images/hi-paris.PNG)
+![Alt text](images/hi-paris.png)
 
-This repository contains the demos for the *Hi! PARIS Summer School 2024* session on **Exploring Machine Learning Deployment from beginner to advance level**.
+This repository contains the demos for the *Hi! PARIS Summer School 2024* session on **Exploring Machine Learning Deployment from beginner to advance level** 🚀.
 
 The repository contains three folders, one for each practical demo:
 - `streamlit-app/` for the Streamlit demo
@@ -14,8 +14,8 @@ The repository contains three folders, one for each practical demo:
 The session was hosted by  **Awais SANI**, Senior Machine Learning engineer @ Hi! PARIS and **Laurène DAVID**, Machine Learning engineer @ Hi! PARIS.
 
 To learn more about the Hi! PARIS Engineering Team, here are some useful links:
-- Github: 
-- Website: 
+- Github: https://github.com/hi-paris
+- Website: https://engineeringteam.hi-paris.fr/
 
 <br> 
 
