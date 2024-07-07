@@ -1,7 +1,8 @@
 
 import os
+import json
 import joblib 
-from preprocessing import text_preprocessing
+from preprocess import text_preprocessing
 
 def model_fn(model_dir):
     """
@@ -20,15 +21,12 @@ def predict_fn(input_data, model):
     """
     tfidf = model['vectorizer']
     lr_model = model['model']
-    
-    if isinstance(input_data, str):
-        text = [text]
         
     clean_text = text_preprocessing(input_data)
     embedding = tfidf.transform(clean_text)
     prediction = lr_model.predict(embedding)
 
-    return prediction
+    return prediction.tolist()
 
 
 def input_fn(request_body, request_content_type):
@@ -50,8 +48,8 @@ def output_fn(prediction, response_content_type):
     """
 
     if response_content_type == "application/json":
-        response = str(prediction)
+        response = json.dumps(prediction)
     else:
-        response = str(prediction)
+        response = str(prediction) 
 
     return response

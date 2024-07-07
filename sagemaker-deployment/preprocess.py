@@ -1,21 +1,25 @@
 import re 
+import nltk
 import string
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 # TEXT CLEANING 
 def clean_text(text):
-    text = text.replace('<br /><br />','')
+    text = str(text).replace('<br /><br />','')
     text = text.lower() 
     text = text.strip()  
     text = re.compile('<.*?>').sub('', text) 
     text = re.compile('[%s]' % re.escape(string.punctuation)).sub(' ', text)  
     text = re.sub('\s+', ' ', text)  
-    text = re.sub(r'\[[0-9]*\]',' ',text) 
+    text = re.sub(r'\[[0-9]*\]', ' ', text) 
     text = re.sub(r'[^\w\s]', '', str(text).lower().strip())
-    text = re.sub(r'\d',' ',text) 
-    text = re.sub(r'\s+',' ',text) 
+    text = re.sub(r'\d', ' ', text) 
+    text = re.sub(r'\s+', ' ', text) 
     return text
 
 def remove_stopwords(text):
@@ -32,8 +36,7 @@ def text_preprocessing(text):
     text = clean_text(text)
     text = remove_stopwords(text)
     text = apply_lemmatizer(text)
-    return text
-
+    return [text]
 
     
 
