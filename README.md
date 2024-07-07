@@ -1,8 +1,8 @@
-# Exploring Machine Learning Deployment from beginner to advance level 🚀
+# Hi! PARIS Summer School 2024 - Exploring Machine Learning Deployment from beginner to advance level 🚀
 
 ![Alt text](images/hi-paris.png)
 
-This repository contains the demos for the *Hi! PARIS Summer School 2024* session on **Exploring Machine Learning Deployment from beginner to advance level** 🚀.
+This repository contains the demos for the **Hi! PARIS Summer School 2024** session on **Exploring Machine Learning Deployment from beginner to advance level** 🚀.
 
 The repository contains three folders, one for each practical demo:
 - `streamlit-app/` for the Streamlit demo
