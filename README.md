@@ -49,6 +49,7 @@ pip3 freeze > requirements.txt
 
 ## Demo 2: Deploy pre-trained sklearn models with AWS SageMaker 
 
+
 ### <u>1. How to launch a SageMaker notebook instance</u> 
 
 #### Step 1: Create an AWS account
@@ -79,7 +80,10 @@ Once you've provided all the required information, you can now launch the notebo
 
 <br>
 
-### <u>2. Deploy a pre-trained model with SageMaker</u>
-The `sagemaker-deployment/ss2024_AWS_deployment.ipynb` notebook contains detailed steps to deploy a pre-trained sklearn model to AWS SageMaker.  
+### <u>2. SageMaker documentation/tutorials</u>
+- SageMaker Python SDK documentation: https://sagemaker.readthedocs.io/en/stable/index.html​
+- Host a pre-trained model on SageMaker: https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-script-mode/pytorch_bert/deploy_bert_outputs.html
+- Using Scikit-learn with the SageMaker Python SDK: https://sagemaker.readthedocs.io/en/stable/frameworks/sklearn/using_sklearn.html#deploy-a-scikit-learn-model
+- Boto3 documentation: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
 
 
