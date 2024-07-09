@@ -85,5 +85,5 @@ Once you've provided all the required information, you can now launch the notebo
 - Host a pre-trained model on SageMaker: https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-script-mode/pytorch_bert/deploy_bert_outputs.html
 - Using Scikit-learn with the SageMaker Python SDK: https://sagemaker.readthedocs.io/en/stable/frameworks/sklearn/using_sklearn.html#deploy-a-scikit-learn-model
 - Boto3 documentation: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
-
+- Use Docker containers to train and deploy models: https://docs.aws.amazon.com/sagemaker/latest/dg/docker-containers.html
 
