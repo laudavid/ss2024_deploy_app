@@ -4,7 +4,7 @@
 
 This repository contains the demos for the **Hi! PARIS Summer School 2024** session on **Exploring Machine Learning Deployment from beginner to advance level** 🚀.
 
-The repository contains three folders, one for each practical demo:
+The repository is divided into three folders, one for each practical demo:
 - `streamlit-app/` for the Streamlit demo
 - `sagemaker-deployment/` for the AWS SageMaker demo
 - `docker-app/` for the Docker + AWS Lambda demo 
@@ -29,18 +29,18 @@ To learn more about the Hi! PARIS Engineering Team, here are some useful links:
 - Deploy a Streamlit app: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app
 - Manage streamlit secrets: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management
 - Connect app to external data sources: https://docs.streamlit.io/develop/tutorials/databases
-- Deploy to HuggingFace spaces: https://medium.com/@imanuelyosi/deploy-your-streamlit-web-app-using-hugging-face-7b9cddb11148
+- Deploy an app to HuggingFace spaces: https://medium.com/@imanuelyosi/deploy-your-streamlit-web-app-using-hugging-face-7b9cddb11148
 <br>
 
-### <u>2. Useful commands</u>
+### <u>2. Terminal commands</u>
 
-Launch a streamlit app locally <br>
+Launch the streamlit app locally <br>
 ```python 
-streamlit run app.py
+streamlit run streamlit-app/app.py
 ```
 <br>
 
-Build a `requirments.txt` file for deployment
+Build a `requirements.txt` file to deploy the app via Streamlit Cloud
 ```python
 pip3 freeze > requirements.txt
 ```
@@ -57,25 +57,27 @@ https://aws.amazon.com/?nc1=h_ls
 
 #### Step 2: Go to the Amazon SageMaker console and create a notebook instance.
 
-![...](images/notebook_console.PNG)
 Go to the Amazon SageMaker console and select the Notebooks option on the console's left tab.
 To create the notebook, click on **Create notebook instance**.
 
+![...](images/notebook_console.PNG)
+
+
 #### Step 3: Configure the SageMaker notebook instance.
+
+- Select a *notebook instance name*
+- Select a *notebook instance type* 
+- Select a *platform type* for the notebook instance, for example the JupyterLab version you want to use 
+- For the IAM role, click on *Create a new role option* then create a role associed to the instance's S3 bucket. 
 
 ![](images/create_notebook.PNG)
 
-Most of the following fields can be left with their default value, except the configuration of an IAM role. This IAM role will enable access the notebook's S3 bucket to store data/models.
+Most of these configuration can be left with their default value. Only the creation of a new IAM role is mandatory to access the S3 bucket.
 
-
-- Select a *notebook instance name*
-- Select a *notebook instance type* (the default value is the least expensive option)
-- Select a *platform type* for the notebook instance, for example the JupyterLab version you want to use (can be left at default)
-- For the IAM role, click on *Create a new role option* then create a row for the notebook.
-
-#### Step 5: Launch the notebook instance 
+#### Step 4: Launch the notebook instance 
 Once you've provided all the required information, you can now launch the notebook (this can take a couple of minutes). To stop the instance from running, click on the notebook instance then select *Stop*. This will be prevent additional costs.
 
+<br>
 
 ### <u>2. Deploy a pre-trained model with SageMaker</u>
 The `sagemaker-deployment/ss2024_AWS_deployment.ipynb` notebook contains detailed steps to deploy a pre-trained sklearn model to AWS SageMaker.  
